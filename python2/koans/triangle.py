@@ -19,9 +19,21 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    countequals = (a==b) + (a==c) + (b==c)
+    if(countequals==3):
+      result = 'equilateral'
+    elif(countequals==1):
+      result = 'isosceles'
+    else:
+      result = 'scalene'
+    return result
 
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(StandardError):
     pass
+
+
+if __name__=="__main__":
+  result = triangle(4,3,3)
+  print(result)
