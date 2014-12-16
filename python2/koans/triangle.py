@@ -17,16 +17,26 @@
 # and
 #   about_triangle_project_2.py
 #
+
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    countequals = (a==b) + (a==c) + (b==c)
-    if(countequals==3):
-      result = 'equilateral'
-    elif(countequals==1):
-      result = 'isosceles'
-    else:
-      result = 'scalene'
-    return result
+    try:
+      1 /(a + abs(a))
+      1/(b+abs(b))
+      1/(c+abs(c))
+      if ((a > b +c) | (b > a + c) | (c > b + a)):
+          raise TriangleError
+      countequals=((a==b)+(b==c)+(a==c))
+      if(countequals==3):
+        result = 'equilateral'
+      elif(countequals==1):
+        result = 'isosceles'
+      else:
+        result = 'scalene'
+      return result
+    except ZeroDivisionError:
+      raise TriangleError
+
 
 
 # Error class used in part 2.  No need to change this code.
