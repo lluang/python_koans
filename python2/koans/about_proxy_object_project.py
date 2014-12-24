@@ -22,12 +22,26 @@ from runner.koan import *
 class Proxy(object):
     def __init__(self, target_object):
         # WRITE CODE HERE
-
+        self._on == False
         #initialize '_obj' attribute last. Trust me on this!
         self._obj = target_object
 
-    # WRITE CODE HERE
-
+    def is_on(self):
+        return self._on
+    
+    def power(self):
+        if self._on:
+            self._on = False
+        else:
+            self._on = True
+    
+    def messages(self):
+        messages = []
+        if self._on:
+            messages.append('power')
+        if self.channel != None:
+            messages.append('channel')
+        return messages
 
 # The proxy object should pass the following Koan:
 #
